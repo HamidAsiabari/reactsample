@@ -15,7 +15,7 @@ function App() {
           <Appbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/ecommerce" element={<AboutUs />} />
+            <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

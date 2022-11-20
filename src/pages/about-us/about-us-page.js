@@ -1,7 +1,7 @@
 import React from "react";
 
 function AboutUs() {
-  return <div>about-usage</div>;
+  return <div>about-us</div>;
 }
 
 export default AboutUs;
