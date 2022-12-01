@@ -1,22 +1,28 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, AboutUs } from "./pages";
+
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./features/theme/theme";
 import Appbar from "./features/ui/appbar/appbar";
 
-console.log("theme", theme);
+const Home = lazy(() => import('./pages/home/home-page.js'));
+const AboutUs = lazy(() => import('./pages/about-us/about-us-page.js'));
+
 function App() {
-  return (
-    <div>
+
+  return (<div>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <Appbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<AboutUs />} />
+          <div style={{padding:"0px"}} >
+          <Routes >
+        
+            <Route path="/" element={<Suspense fallback={<div>Loading...</div>}><Home /></Suspense>} />
+            <Route path="/about-us" element={ <Suspense fallback={<div>Loading...</div>}><AboutUs /></Suspense> } />
+           
           </Routes>
+          </div>
         </ThemeProvider>
       </BrowserRouter>
     </div>
