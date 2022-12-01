@@ -31,6 +31,9 @@ export default function Appbar() {
           <Typography variant="h6" component="div" ml={2}>
             <Link to="/about-us">About</Link>
           </Typography>
+          <Typography variant="h6" component="div" ml={2}>
+            <Link to="/ExampleList">Examples</Link>
+          </Typography>
           <Button sx={{ marginLeft: "auto" }} color="inherit">
             Login
           </Button>
